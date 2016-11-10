@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS开发," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="####关于 UIBezierPath  是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形1234567891011####UIBezierPath 基本使用方法 ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用`">
+<meta name="description" content="###关于 UIBezierPath  是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形1234567891011####UIBezierPath 基本使用方法 ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用``">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS UIBezierPath贝塞尔曲线常用方法">
+<meta property="og:title" content="UIBezierPathMethods">
 <meta property="og:url" content="http://yoursite.com/2016/11/10/UIBezierPathMethods/index.html">
 <meta property="og:site_name" content="irembeu' 时间胶囊">
-<meta property="og:description" content="####关于 UIBezierPath  是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形1234567891011####UIBezierPath 基本使用方法 ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用`">
-<meta property="og:updated_time" content="2016-11-10T15:22:12.000Z">
+<meta property="og:description" content="###关于 UIBezierPath  是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形1234567891011####UIBezierPath 基本使用方法 ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用``">
+<meta property="og:updated_time" content="2016-11-10T15:32:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS UIBezierPath贝塞尔曲线常用方法">
-<meta name="twitter:description" content="####关于 UIBezierPath  是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形1234567891011####UIBezierPath 基本使用方法 ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用`">
+<meta name="twitter:title" content="UIBezierPathMethods">
+<meta name="twitter:description" content="###关于 UIBezierPath  是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形1234567891011####UIBezierPath 基本使用方法 ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用``">
 
 
 
@@ -117,7 +117,7 @@
   <link rel="canonical" href="http://yoursite.com/2016/11/10/UIBezierPathMethods/"/>
 
 
-  <title> iOS UIBezierPath贝塞尔曲线常用方法 | irembeu' 时间胶囊 </title>
+  <title> UIBezierPathMethods | irembeu' 时间胶囊 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -247,7 +247,7 @@
             
             
               
-                iOS UIBezierPath贝塞尔曲线常用方法
+                UIBezierPathMethods
               
             
           </h1>
@@ -259,7 +259,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-10T23:20:27+08:00" content="2016-11-10">
+            <time itemprop="dateCreated" datetime="2016-11-10T23:25:23+08:00" content="2016-11-10">
               2016-11-10
             </time>
           </span>
@@ -294,7 +294,7 @@
       
 
       
-        <p>####关于 UIBezierPath<br>  <figure class="highlight plain"><figcaption><span>是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">####UIBezierPath 基本使用方法</div><div class="line"> ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用``` UIBezierPath```都是在重写view的```drawRect ```方法这种情形。我们用直线去创建矩形或多边形，使用曲线创建弧或者圆。创建和使用path对象步骤：</div><div class="line">1、  重写View的```drawRect```方法</div><div class="line">2、 创建``` UIBezierPath```的对象</div><div class="line">3、 使用方法```moveToPoint:``` 设置初始点</div><div class="line">4、 根据具体要求使用``` UIBezierPath```类方法绘图（比如要画线、矩形、圆、弧？等）</div><div class="line">5、 设置``` UIBezierPath```对象相关属性 （比如```lineWidth```、```lineJoinStyle```、```aPath.lineCapStyle```、```color```）</div><div class="line">6、 使用stroke 或者 fill方法结束绘图</div><div class="line"></div><div class="line">比如我们想要画一条线demo：</div></pre></td></tr></table></figure></p>
+        <p>###关于 UIBezierPath<br>  <figure class="highlight plain"><figcaption><span>是Core Graphics框架关于path的一个封装，使用此类可以定义简单的形状，比如我们常用到，矩形，圆形，椭圆，弧，或者不规则的多边形</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">####UIBezierPath 基本使用方法</div><div class="line"> ``` UIBezierPath```对象是CGPathRef数据类型的封装。path如果是基于矢量形状的，都用直线或曲线去创建。我们一般使用``` UIBezierPath```都是在重写view的```drawRect ```方法这种情形。我们用直线去创建矩形或多边形，使用曲线创建弧或者圆。创建和使用path对象步骤：</div><div class="line">1、  重写View的```drawRect```方法</div><div class="line">2、 创建``` UIBezierPath```的对象</div><div class="line">3、 使用方法```moveToPoint:``` 设置初始点</div><div class="line">4、 根据具体要求使用``` UIBezierPath```类方法绘图（比如要画线、矩形、圆、弧？等）</div><div class="line">5、 设置``` UIBezierPath```对象相关属性 （比如```lineWidth```、```lineJoinStyle```、```aPath.lineCapStyle```、```color```）</div><div class="line">6、 使用stroke 或者 fill方法结束绘图</div><div class="line"></div><div class="line">比如我们想要画一条线demo：</div></pre></td></tr></table></figure></p>
 <ul>
 <li><p>(void)drawRect:(CGRect)rect {</p>
 <p>  UIColor *color = [UIColor redColor];<br>  [color set]; //设置线条颜色</p>
@@ -388,12 +388,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/iOS开发/" rel="tag">#iOS开发</a>
-          
-        </div>
-      
 
       
 
@@ -418,7 +412,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/11/10/UIBezierPathMethods/"
-           data-title="iOS UIBezierPath贝塞尔曲线常用方法" data-url="http://yoursite.com/2016/11/10/UIBezierPathMethods/">
+           data-title="UIBezierPathMethods" data-url="http://yoursite.com/2016/11/10/UIBezierPathMethods/">
       </div>
     
   </div>
@@ -470,13 +464,6 @@
 
           
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
           
 
         </nav>
