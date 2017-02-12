@@ -92,7 +92,7 @@
 <meta property="og:site_name" content="irembeu' 时间胶囊">
 <meta property="og:description" content="写在前面  新年回来，终于迎来了新项目，由于我们开发的APP主要用于自己家公司员工使用的，所以呢，需求要求新开发的APP需要根据员工的职能的不同使用对应的APP，两个APP界面相同，只是为了区分不能职能，具体就不细说了，当时想，这需要做两个APP嘛？就算copy的话也挺麻烦的啊，不偷懒的程序猿不是好程序猿，哈哈哈，这时我同事一句话提醒了我：target。
 利用Xcode的target创建两个APP">
-<meta property="og:updated_time" content="2017-02-09T15:28:47.000Z">
+<meta property="og:updated_time" content="2017-02-12T10:26:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode同一Project创建多个target">
 <meta name="twitter:description" content="写在前面  新年回来，终于迎来了新项目，由于我们开发的APP主要用于自己家公司员工使用的，所以呢，需求要求新开发的APP需要根据员工的职能的不同使用对应的APP，两个APP界面相同，只是为了区分不能职能，具体就不细说了，当时想，这需要做两个APP嘛？就算copy的话也挺麻烦的啊，不偷懒的程序猿不是好程序猿，哈哈哈，这时我同事一句话提醒了我：target。
@@ -282,7 +282,7 @@
 
       
         <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>  新年回来，终于迎来了新项目，由于我们开发的APP主要用于自己家公司员工使用的，所以呢，需求要求新开发的APP需要根据员工的职能的不同使用对应的APP，两个APP界面相同，只是为了区分不能职能，具体就不细说了，当时想，这需要做两个APP嘛？就算copy的话也挺麻烦的啊，不偷懒的程序猿不是好程序猿，哈哈哈，这时我同事一句话提醒了我：<code>target</code>。</p>
-<h4 id="利用Xcode的target创建两个APP"><a href="#利用Xcode的target创建两个APP" class="headerlink" title="利用Xcode的target创建两个APP"></a>利用Xcode的target创建两个APP</h4><p>既然是两个APP的界面是一样的，那么就简单很多了，创建一个新的项目之后，通过对原有的target做duplicate，复制一份，下面就记录一下通过duplicate新建target的方法。<br>假设原来的target名字为targetTestDemo，我们需要新建一个targetTestDemo2。<br><img src="" alt="1.png"><br>在原来的target上右键，选择duplicate，Xcode会复制一个名为targetTestDemo copy的target对象，同时会生成一个targetTestDemo copy-info.plist和targetTestDemo copy的scheme。选择复制之后如下图：<br><img src="" alt="2.png"><br>箭头所指的plist文件是与新生成的target对应的文件，需要更改两个target对应的bundle name，选中这个Target-info-plist name。更改图标就在Images.xcassets中上传两套图标，选中Target-Gernal-App Icons and Launch Images进行选择。这样两个APP的名字和icon就都不一样了。那么怎么在编写程序的时候区分这连个APP呢？那就是编写预编译宏，用来区分两个Target。选中Target-Bulid Settings-Preprocessor Macros分别给俩个Target添加两个预定义宏First=1、Second=1:<img src="" alt="3.png"><br>在AppDelegate.m中加入条件判断语句：</p>
+<h4 id="利用Xcode的target创建两个APP"><a href="#利用Xcode的target创建两个APP" class="headerlink" title="利用Xcode的target创建两个APP"></a>利用Xcode的target创建两个APP</h4><p>既然是两个APP的界面是一样的，那么就简单很多了，创建一个新的项目之后，通过对原有的target做duplicate，复制一份，下面就记录一下通过duplicate新建target的方法。<br>假设原来的target名字为targetTestDemo，我们需要新建一个targetTestDemo2。<br>![1.png]<br>在原来的target上右键，选择duplicate，Xcode会复制一个名为targetTestDemo copy的target对象，同时会生成一个targetTestDemo copy-info.plist和targetTestDemo copy的scheme。选择复制之后如下图：<br>![2.png]<br>箭头所指的plist文件是与新生成的target对应的文件，需要更改两个target对应的bundle name，选中这个Target-info-plist name。更改图标就在Images.xcassets中上传两套图标，选中Target-Gernal-App Icons and Launch Images进行选择。这样两个APP的名字和icon就都不一样了。那么怎么在编写程序的时候区分这连个APP呢？那就是编写预编译宏，用来区分两个Target。选中Target-Bulid Settings-Preprocessor Macros分别给俩个Target添加两个预定义宏First=1、Second=1:![3.png]<br>在AppDelegate.m中加入条件判断语句：</p>
 <p>`#if defined (MACRO)<br>//target  B需要执行的代码</p>
 <p> #else<br>//target A需要执行的代码</p>
 <p> #endif`</p>
