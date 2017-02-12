@@ -293,7 +293,7 @@
         
           
             <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>新年回来，终于迎来了新项目，由于我们开发的APP主要用于自己家公司员工使用的，所以呢，需求要求新开发的APP需要根据员工的职能的不同使用对应的APP，两个APP界面相同，只是为了区分不能职能，具体就不细说了，当时想，这需要做两个APP嘛？就算copy的话也挺麻烦的啊，不偷懒的程序猿不是好程序猿，哈哈哈，这时我同事一句话提醒了我：<code>target</code>。</p>
-<h4 id="利用Xcode的target创建两个APP"><a href="#利用Xcode的target创建两个APP" class="headerlink" title="利用Xcode的target创建两个APP"></a>利用Xcode的target创建两个APP</h4><p>既然是两个APP的界面是一样的，那么就简单很多了，简单的来说就是创建一个新的项目之后，通过对原有的target做duplicate，复制一份，那接下来就记录一下通过duplicate新建target的方法。</p>
+<h4 id="利用Xcode的target创建两个APP"><a href="#利用Xcode的target创建两个APP" class="headerlink" title="利用Xcode的target创建两个APP"></a>利用Xcode的target创建两个APP</h4><p>既然是两个APP的界面是一样的，那么就简单很多了，简单的来说就是创建一个新的项目之后，通过对原有的<code>target</code>做<code>duplicate</code>，复制一份，那接下来就记录一下通过<code>duplicate</code>新建<code>target</code>的方法。</p>
 <ul>
 <li>假设原来的<code>target</code>名字为<code>targetTestDemo</code>，我们需要新建一个<code>targetTestDemo2</code>。        </li>
 </ul>
@@ -303,9 +303,9 @@
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/668737-102180b8fdc73023.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.png"></p>
 <ul>
-<li><p>箭头所指的plist文件是与新生成的target对应的文件，需要更改两个target对应的<code>bundle name</code>，选中这个<code>Target-info-plist name</code>。更改图标就在<code>Images.xcassets</code>中上传两套图标，选中<code>Target-Gernal-App Icons and Launch Images</code>进行选择。这样两个APP的名字和<code>icon</code>就都不一样了。</p>
+<li><p>箭头所指的plist文件是与新生成的target对应的文件，需要更改两个<code>target</code>对应的<code>bundle name</code>，选中这个<code>Target-info-plist name</code>。更改图标就在<code>Images.xcassets</code>中上传两套图标，选中<code>Target-Gernal-App Icons and Launch Images</code>进行选择。这样两个APP的名字和<code>icon</code>就都不一样了。</p>
 </li>
-<li><p>那么怎么在编写程序的时候区分这连个APP呢？那就是编写预编译宏，用来区分两个<code>Target</code>。选中<code>Target-Bulid Settings-Preprocessor Macros</code>分别给俩个Target添加两个预定义宏First=1、Second=1:<br><img src="http://upload-images.jianshu.io/upload_images/668737-07ca9d631da50958.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png">    </p>
+<li><p>那么怎么在编写程序的时候区分这连个APP呢？那就是编写预编译宏，用来区分两个<code>Target</code>。选中<code>Target-Bulid Settings-Preprocessor Macros</code>分别给俩个<code>Target</code>添加两个预定义宏First=1、Second=1:<br><img src="http://upload-images.jianshu.io/upload_images/668737-07ca9d631da50958.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.png">    </p>
 </li>
 <li><p>在<code>AppDelegate.m</code>中加入条件判断语句：</p>
 </li>
